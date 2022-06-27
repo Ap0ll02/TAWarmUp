@@ -3,6 +3,7 @@
 #include <stdlib.h>
 
 void StartPoint();
+void A1(int hasKey1);
 void C1();
 void C2();
 void C3();
@@ -16,7 +17,7 @@ int main()
     StartPoint();
 }
 
-void StartPoint()
+void StartPoint(int key)
 {
     int choice = 0;
     printf("Good. Now that is out of the way. You are in a dark room. \n");
@@ -37,10 +38,16 @@ void StartPoint()
     }
 }
 
-void C1()
+void C1(int hasKey1)
 {
+    int choice;
     printf("You walk around and find the room to have a door and a table. \n");
     printf("1. Open the door | 2. Go to the table \n");
+    scanf("%d", &choice);
+    if(choice == 1)
+    {
+        A1(hasKey1);
+    }
 }
 
 void C2()
@@ -49,7 +56,7 @@ void C2()
     char status;
     printf("You stand still. Regretably, a monster was following you. Tentacles come into view, strangling you. Game Over. \n");
     printf("Restart? Type Y \n");
-    scanf(" %c", &status);
+    scanf("%c", &status);
     ret = strcmp(&status, "Y");
     if(ret == 0)
     {
@@ -59,5 +66,16 @@ void C2()
 
 void C3()
 {
+    int firstKey = 1;
+    printf("You reach into your pockets and find a key. \n");
+    StartPoint(firstKey);
+}
 
+void A1(int hasKey1)
+{
+    printf("You Attempt To Open The Door \n");
+    if()
+    {
+        
+    }
 }
